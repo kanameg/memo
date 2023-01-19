@@ -1,0 +1,55 @@
+name: Lint and Build PDF file
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+env:
+  TARGET: reading
+
+jobs:
+  Lint-Doc:
+    name: Lint Doc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume
+      - name: Lint AsciiDoc documents
+        uses: addnab/docker-run-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+          image: ghcr.io/kanameg/textlint-asciidoc:1.0.0
+          options: -v ${{ github.workspace }}:/documents
+          run: |
+            ls -la
+            textlint ${{ env.TARGET }}.adoc
+  Build-PDF:
+    name: Build PDF
+    needs: Lint-Doc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+      - name: Build PDF file
+        uses: addnab/docker-run-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+          image: ghcr.io/kanameg/asciidoctor-jp:1.0.0
+          options: -v ${{ github.workspace }}:/documents
+          run: |
+            asciidoctor-pdf -a scripts=cjk ${{ env.TARGET }}.adoc
+            asciidoctor-epub3 ${{ env.TARGET }}.adoc
+            ls -la
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: ml-memo-PDF
+          path: |
+            ${{ env.TARGET }}.pdf
+            ${{ env.TARGET }}.epub
