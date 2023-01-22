@@ -74,3 +74,15 @@ ____
 === 参考文献
 [bibliography]
 - ショーペンハウエル[著]斎藤忍随[訳].『読書について』.岩波文庫
+
+
+
+=== 参考文献(未読)
+- https://www.scienceshift.jp/blog/catalog-of-reading-techniques[読書の技術カタログ〜本を読むために知っておきたい知識・テクニック〜]
+
+- https://scienceshift.jp/blog/how-to-acquire-knowledge-and-read-books-properly-01[東大「現代文」の知識を仕事に生かす〜知識を身につけ本をきちんと読む方法【相澤理氏連載：第一回】]
+- https://scienceshift.jp/blog/how-to-acquire-knowledge-and-read-books-properly-02[東大「現代文」の知識を仕事に生かす〜「幅の広い指示語」を理解する【相澤理氏連載：第二回】]
+- https://scienceshift.jp/blog/how-to-acquire-knowledge-and-read-books-properly-03[東大「現代文」の知識を仕事に生かす〜〈具体〉と〈抽象〉の関係をとらえる【相澤理氏連載：第三回】]
+- https://scienceshift.jp/blog/reading-skills-seminar-01[「読む技術」養成講座【第一回：精読…きちんと正確に読む】国立国語研究所教授・石黒圭氏寄稿]
+- https://scienceshift.jp/blog/reading-skills-seminar-02[「読む技術」養成講座【第二回：速読…さくさく素早く読む】国立国語研究所教授・石黒圭氏寄稿]
+- https://scienceshift.jp/blog/reading-skills-seminar-03[「読む技術」養成講座【第三回：熟読…じっくり深く読む】国立国語研究所教授・石黒圭氏寄稿]
