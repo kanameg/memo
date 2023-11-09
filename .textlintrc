@@ -1,0 +1,28 @@
+{
+  "filters": {
+    "allowlist": {
+      "allow": [
+        "/http.+\\[.+\\]/m",
+        "/\\^[quote.+\\]$/m",
+        "/^____$[^]*?^____$/m"
+      ]
+    }
+  },
+  "rules": {
+      "preset-japanese": {
+          "sentence-length": false
+      },
+      "preset-ja-spacing": false,
+      "preset-ja-technical-writing": {
+          "sentence-length": false,
+          "max-kanji-continuous-len": {
+            "max": 10
+          },
+          "ja-no-weak-phrase": true
+      },
+      "spellcheck-tech-word": true
+  },
+  "plugins": [
+    "asciidoctor"
+  ]
+}
